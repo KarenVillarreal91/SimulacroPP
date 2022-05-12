@@ -1,0 +1,26 @@
+
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Películas</h1>
+      </div>
+    </div>
+  </section>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <div class="col" style="text-align: center; margin: auto; width: 226px;" *ngFor="let pelicula of this.peliculas">
+                <div class="card shadow-sm" style="width: 226px;" (click)="Seleccionar(this.pelicula)">
+                    <img [src]="this.pelicula.foto">
+                    <div class="card-body">
+                        <h5>{{this.pelicula.nombre}}</h5>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+

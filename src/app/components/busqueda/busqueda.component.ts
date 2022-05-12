@@ -1,0 +1,20 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-busqueda',
+  templateUrl: './busqueda.component.html',
+  styleUrls: ['./busqueda.component.scss']
+})
+export class BusquedaComponent implements OnInit {
+
+  seleccionado:any;
+
+  constructor() { }
+
+  ngOnInit(): void {}
+
+  Seleccionar(e:any)
+  {
+    this.seleccionado = e;
+  }
+}

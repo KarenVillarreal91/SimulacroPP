@@ -1,0 +1,64 @@
+<div class="container" style="margin-top: 50px;">
+    <main>
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+          <app-tabla-paises (paisSeleccionadoEmitter)="SeleccionarPais($event)"></app-tabla-paises>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Alta de actores</h4>
+          <form [formGroup]="form" (ngSubmit)="SubirActor()">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="" formControlName="nombre" required>
+                        <small class="invalid" *ngIf="form.controls['nombre'].errors?.['required'] && form.controls['nombre'].touched">
+                            Nombre invalido.
+                        </small>
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="lastName" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" formControlName="apellido">
+                        <small class="invalid" *ngIf="form.controls['apellido'].errors?.['required'] && form.controls['apellido'].touched">
+                        Apellido invalido.
+                        </small>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <label for="firstName" class="form-label">Edad</label>
+                        <input type="number" class="form-control" id="firstName" placeholder="" formControlName="edad">
+                        <small class="invalid" *ngIf="form.controls['edad'].errors?.['required'] && form.controls['edad'].touched">
+                            Edad invalida.
+                        </small>
+                        <small class="invalid" *ngIf="form.controls['edad'].errors?.['min'] || form.controls['edad'].errors?.['max']">
+                            Edad minima 18 y máximo 99.
+                        </small>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" formControlName="email">
+                        <small class="invalid" *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched
+                        || form.controls['email'].errors?.['email']">
+                            Email invalido.
+                        </small>
+                    </div>
+        
+                    <div class="col-md-5">
+                        <label for="country" class="form-label">País</label>
+                        <input type="text" class="form-control" id="pais" placeholder="" formControlName="pais" readonly>
+                        <small class="invalid" *ngIf="form.controls['pais'].errors?.['required'] && form.controls['pais'].touched">
+                            Seleccione un país.
+                        </small>
+                    </div>
+                
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="form.invalid">Continuar</button>
+                </div>
+          </form>
+        </div>
+    </div>
+</main>
+  </div>
+  
