@@ -16,6 +16,11 @@ import { environment } from 'src/environments/environment.prod';
 import { DetallePeliculaComponent } from './components/detalle-pelicula/detalle-pelicula.component';
 import { TablaPaisesComponent } from './components/tabla-paises/tabla-paises.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { TablaActorComponent } from './components/tabla-actor/tabla-actor.component';
+import { ActorPeliculaComponent } from './pages/actor-pelicula/actor-pelicula.component';
+import { ActorPaisComponent } from './components/actor-pais/actor-pais.component';
+import { DetallesActorComponent } from './components/detalles-actor/detalles-actor.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +33,18 @@ import { HttpClientModule } from '@angular/common/http';
     PeliculaListadoComponent,
     TablaPeliculaComponent,
     DetallePeliculaComponent,
-    TablaPaisesComponent
+    TablaPaisesComponent,
+    TablaActorComponent,
+    ActorPeliculaComponent,
+    ActorPaisComponent,
+    DetallesActorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
     ReactiveFormsModule,
     HttpClientModule
   ],

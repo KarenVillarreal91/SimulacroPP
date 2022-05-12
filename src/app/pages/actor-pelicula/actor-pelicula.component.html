@@ -1,0 +1,14 @@
+<app-actor-listado (actorSeleccionadoEmitter)="Seleccionar($event)"></app-actor-listado>
+<div style="text-align: center;">
+    <div style="display: inline-flex;">
+        <app-pelicula-listado [inputSeleccion]="peliculasMostrar"></app-pelicula-listado>
+    </div>
+
+    <div style="display: inline-flex;">
+        <app-actor-pais [inputSeleccion]="paisMostrar"></app-actor-pais>
+    </div>
+
+    <div style="display: inline-flex;">
+        <app-detalles-actor [inputSeleccion]="actor"></app-detalles-actor>
+    </div>
+</div>

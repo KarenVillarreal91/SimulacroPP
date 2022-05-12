@@ -13,7 +13,7 @@ export class TablaPaisesComponent implements OnInit {
 
   constructor(private api:ApiService) 
   { 
-    this.api.ObtenerPaises().subscribe((data)=>{
+    api.ObtenerPaises().subscribe((data)=>{
       this.paises = data;
     });
   }

@@ -1,2 +1,23 @@
-<app-tabla-pelicula></app-tabla-pelicula>
+<section class="py-5 text-center container" style="width: 450px;">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Películas</h1>
+      </div>
+    </div>
+</section>
 
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <div class="col" style="text-align: center; margin: auto; width: 120px;" *ngFor="let pelicula of this.inputSeleccion">
+                <div class="card shadow-sm" style="width: 120px;">
+                    <img [src]="pelicula.foto">
+                    <div class="card-body">
+                        <p>{{pelicula.nombre}}</p>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

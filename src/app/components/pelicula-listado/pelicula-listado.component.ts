@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PeliculaService } from 'src/app/service/pelicula.service';
 
 @Component({
   selector: 'app-pelicula-listado',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculaListadoComponent implements OnInit {
 
-  constructor() { }
+  @Input() inputSeleccion:Array<any> = [];
+  
+  constructor() 
+  {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

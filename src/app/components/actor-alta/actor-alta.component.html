@@ -45,8 +45,8 @@
                     </div>
         
                     <div class="col-md-5">
-                        <label for="country" class="form-label">País</label>
-                        <input type="text" class="form-control" id="pais" placeholder="" formControlName="pais" readonly>
+                        <label for="country" class="form-label">País <img width="35px" [src]="this.paisFoto"></label>
+                        <input type="text" class="form-control" id="pais" placeholder="" formControlName="pais" readonly> 
                         <small class="invalid" *ngIf="form.controls['pais'].errors?.['required'] && form.controls['pais'].touched">
                             Seleccione un país.
                         </small>
@@ -55,6 +55,7 @@
                     <hr class="my-4">
 
                     <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="form.invalid">Continuar</button>
+                    <h5 style="color:#30a130; text-align:center;" *ngIf="this.subido">Actor subido con éxito.</h5>
                 </div>
           </form>
         </div>

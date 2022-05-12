@@ -8,9 +8,13 @@ export class ActorService {
 
   constructor(private firestore:AngularFirestore) { }
 
-
   SubirActor(user: any)
   {
     return this.firestore.collection('actores').add(user);
+  }
+
+  TraerActores()
+  {
+    return this.firestore.collection('actores').valueChanges({idField: "id"});
   }
 }

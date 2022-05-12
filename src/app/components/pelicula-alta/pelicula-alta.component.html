@@ -1,2 +1,77 @@
+<div class="container" style="margin-top: 50px;">
+    <main>
+      <div class="row g-5">
+        <div class="col-md-5 col-lg-4 order-md-last">
+            <app-tabla-actor (actorSeleccionadoEmitter)="SeleccionarActor($event)"></app-tabla-actor>
+        </div>
+        <div class="col-md-7 col-lg-8">
+          <h4 class="mb-3">Alta de peliculas</h4>
+          <form [formGroup]="form" (ngSubmit)="SubirPelicula()">
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="" formControlName="nombre" required>
+                        <small class="invalid" *ngIf="form.controls['nombre'].errors?.['required'] && form.controls['nombre'].touched">
+                            Nombre invalido.
+                        </small>
+                    </div>
+        
+                    <div class="col-sm-6">
+                        <label for="tipo" class="form-label">Tipo</label>
+                            <select formControlName="tipo" class="form-select">
+                                <option value="Terror">Terror</option>
+                                <option value="Amor" >Amor</option>
+                                <option value="Comedia" >Comedia</option>
+                                <option value="Otros" >Otros</option>
+                            </select>
+                        <small class="invalid" *ngIf="form.controls['tipo'].errors?.['required'] && form.controls['tipo'].touched">
+                            Tipo invalido.
+                        </small>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <label for="cantPublico" class="form-label">Cantidad de público</label>
+                        <input type="number" class="form-control" id="firstName" placeholder="" formControlName="cantPublico">
+                        <small class="invalid" *ngIf="form.controls['cantPublico'].errors?.['required'] && form.controls['cantPublico'].touched">
+                            Cantidad invalida.
+                        </small>
+                        <small class="invalid" *ngIf="form.controls['cantPublico'].errors?.['min'] || form.controls['cantPublico'].errors?.['max']">
+                            Cantidad minima 20 y máximo 160.
+                        </small>
+                    </div>
 
+                    <div class="col-5">
+                        <label for="date" class="form-label">Estreno</label>
+                        <input type="date" class="form-control" id="estreno" placeholder="you@example.com" formControlName="estreno">
+                        <small class="invalid" *ngIf="form.controls['estreno'].errors?.['required'] && form.controls['estreno'].touched">
+                            Estreno invalido.
+                        </small>
+                    </div>
+        
+                    <div class="col-md-5">
+                        <label for="actor" class="form-label">Actor</label>
+                        <input type="text" class="form-control" id="actor" placeholder="" formControlName="actor" readonly>
+                        <small class="invalid" *ngIf="form.controls['actor'].errors?.['required'] && form.controls['actor'].touched">
+                            Seleccione un actor.
+                        </small>
+                    </div>
+                    
+                    <div class="col-md-12">
+                        <label for="foto" class="form-label">Foto</label>
+                        <input type="file" accept="image/*" (change)="SubirFoto($event)" class="form-control" id="foto" placeholder="" formControlName="foto">
+                        <small class="invalid" *ngIf="form.controls['foto'].errors?.['required'] && form.controls['foto'].touched">
+                            Seleccione una foto.
+                        </small>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <button class="w-100 btn btn-primary btn-lg" type="submit" [disabled]="form.invalid">Continuar</button>
+                    <h5 style="color:#30a130; text-align:center;" *ngIf="this.subido">Película subida con éxito.</h5>
+                </div>
+          </form>
+        </div>
+    </div>
+</main>
+</div>
   

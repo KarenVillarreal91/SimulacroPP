@@ -11,6 +11,8 @@ import { ActorService } from 'src/app/service/actor.service';
 export class ActorAltaComponent implements OnInit {
 
   form !: FormGroup;
+  subido:boolean = false;
+  paisFoto:string = "";
 
   constructor(private fb:FormBuilder, private actorService:ActorService) 
   { 
@@ -28,10 +30,22 @@ export class ActorAltaComponent implements OnInit {
   SubirActor()
   {
     this.actorService.SubirActor(this.form.value);
+    this.Confirmar();
   }
 
   SeleccionarPais(e:any)
   {
-    this.form.get('pais')?.setValue(e);
+    this.paisFoto = e.flag;
+    this.form.get('pais')?.setValue(e.name);
+  }
+
+  Confirmar()
+  {
+    this.subido = true;
+    this.form.reset();
+
+    setTimeout(() => {
+      this.subido = false;
+    }, 2000);
   }
 }
