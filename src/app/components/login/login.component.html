@@ -1,0 +1,25 @@
+<div class="login">
+    <div class="login-triangle"></div>
+    
+    <h2 class="login-header">Log in</h2>
+
+    <div class="login-container">
+        <form [formGroup]="form" (ngSubmit)='Login()'>
+            <p><label>Correo electrónico</label><input class="form-control" type="email" formControlName="email">
+                <small class="invalid" *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched
+                || form.controls['email'].errors?.['email']">
+                    Email invalido.
+                </small></p>
+            <p><label>Contraseña</label><input class="form-control" type="password" formControlName="password">
+                <small class="invalid" *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].touched">
+                    Ingrese una contraseña.
+                </small></p>
+            <p><input class="rounded" type="submit" value="Continuar"></p>
+        </form>
+    </div>
+
+    <div class="inicioR">
+      <h4>Inicio rápido</h4>
+      <button type="button" class="btn btn-outline-dark" (click)='InicioAutomatico("usuario@usuario.com","123asd")'>Usuario</button>
+    </div>
+</div>

@@ -10,8 +10,8 @@
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-            <div class="col" style="text-align: center; margin: auto; width: 226px;" *ngFor="let actor of this.actores">
-                <div class="card shadow-sm" style="width: 340px;" (click)="SeleccionarActor(actor)">
+            <div class="col" style="text-align: center; margin: auto;" *ngFor="let actor of this.actores">
+                <div class="card shadow-sm" (click)="SeleccionarActor(actor)">
                     <div class="card-body">
                         <h5>{{actor.nombre}} {{actor.apellido}}</h5>
                     </div>

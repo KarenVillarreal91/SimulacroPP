@@ -13,10 +13,10 @@
             <div class="col" style="margin: auto; width: 400px;">
                 <div class="card shadow-sm" style="width: 400px;" *ngIf="inputSeleccion">
                     <div class="card-body">
-                        <h6>{{this.inputSeleccion.nombre}} {{this.inputSeleccion.apellido}}</h6>
-                        <p>Edad: {{this.inputSeleccion.edad}}</p>
-                        <p>País: {{this.inputSeleccion.pais}}</p>
-                        <p>Email: {{this.inputSeleccion.email}}</p>
+                        <h6>{{this.inputSeleccion?.nombre}} {{this.inputSeleccion?.apellido}}</h6>
+                        <p>Edad: {{this.inputSeleccion?.edad}}</p>
+                        <p>País: {{this.inputSeleccion?.pais}}</p>
+                        <p>Email: {{this.inputSeleccion?.email}}</p>
                     </div>
                 </div>
             </div> 

@@ -21,6 +21,9 @@
                         <a class="nav-link active" aria-current="page" routerLink="actor/actorPelicula">Cuarta parte</a>
                     </li>
                 </ul>
+                <div class="text-end" *ngIf="this.userService.userLogueado">
+                    <button type="button" class="btn btn-outline-danger me-2" (click)="LogOut()">Log Out</button>
+                </div>
             </div>
         </div>
     </nav>
